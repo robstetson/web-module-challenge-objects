@@ -16,8 +16,7 @@ The function should:
 */
 
 function createMenuItem(name, price, category){
-    const newMenuItem = {name: "taco", price: 8, category: "lunch"};
-    return newMenuItem;
+    return{name, price, category};
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -29,7 +28,13 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
-
+const pizza = createMenuItem('pizza', 5, 'lunch');
+const wings = createMenuItem('wings', 11, 'lunch');
+const hamSammy = createMenuItem('ham sammy', 6, 'lunch');
+// console.log(pizza);
+// console.log(wings);
+// console.log(hamSammy);
+// commented out this line for sake of having a ton of console logs on the page. so once i am done i comment them out.
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -48,14 +53,18 @@ const burger = {
   price: 18, 
   category: "Lunch", 
 discount:function(person){
-if(person === "teacher" || person === "student"){
+
+  if(person === "teacher" || person === "student"){
   return this.price * .75;
-}else if(person === "public"){
+  
+  }else if(person === "public"){
   return this.price * .90;
 }
 }
 }
-console.log(burger.discount);
+// console.log(burger.discount);
+// commented out this line for sake of having a ton of console logs on the page. so once i am done i comment them out.
+
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -85,9 +94,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 */
 reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
 reviews[8].feedback = 'This place is rough.. Not the best looking inside or out';
-console.log(reviews);
+// console.log(reviews);
 
-
+// I wrote a secondary version of this question. Added an 8th item into the data, and called a new feedback string.
 
 
 
@@ -100,8 +109,9 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array, name, rating, feedback){
+  array.push({name, rating, feedback});
+  return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -115,11 +125,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+
+  return `${array[index].name} gave the restaurant a ${array[index].rating} star review, and their feedback was: ${array[index].feedback}`;
 }
-
-
+// console.log(getReviewByIndex(reviews, 0 )
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
