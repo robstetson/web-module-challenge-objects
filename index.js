@@ -10,7 +10,7 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
 The function should:
   1. Receive values for the object that will be created as parameters
-  2. Create and return an object using the received values 
+  2. Create and return an object using the received values git a
   
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
@@ -19,7 +19,6 @@ function createMenuItem(name, price, category){
     const newMenuItem = {name: "taco", price: 8, category: "lunch"};
     return newMenuItem;
 }
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
 Test your createMenuItems function by doing the following:
@@ -48,10 +47,15 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+discount:function(person){
+if(person === "teacher" || person === "student"){
+  return this.price * .75;
+}else if(person === "public"){
+  return this.price * .90;
 }
-
-
+}
+}
+console.log(burger.discount);
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -63,14 +67,15 @@ const reviews = [
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
     {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
     {name: "Reyna", rating: 3.5, feedback: ""},
+    {name: "Robert", rating: 2.5, feedback: ""},
 ]
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
-
+// console.log(reviews[5].feedback);
+// commented out this line for sake of having a ton of console logs on the page. so once i am done i comment them out.
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -79,7 +84,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
+reviews[8].feedback = 'This place is rough.. Not the best looking inside or out';
 console.log(reviews);
+
 
 
 
